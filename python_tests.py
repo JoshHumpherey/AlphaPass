@@ -11,9 +11,5 @@ class PasswordGenTests(unittest.TestCase):
         self.assertEqual(testPW,expectedResult)
 
 
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
