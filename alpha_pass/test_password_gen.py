@@ -1,4 +1,4 @@
-import password_gen
+import alpha_pass.password_gen as password_gen
 
 
 def test_PasswordGen():
