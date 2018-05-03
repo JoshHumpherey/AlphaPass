@@ -27,13 +27,24 @@ body, html {height: 100%}
     <hr class="w3-border-grey" style="margin:auto;width:40%">
     <p class="w3-large w3-center">The secure, open-source, and stateless password manager</p>
     <center>
-    <form action='localhost:5000/handle_data'>
-        Site Name:<br>
-        <input type="text" name="service_name"><br>
-        Master Key:<br>
-        <input type="password" name="master_password"><br>
-        <input type="submit">
-    </form>
+      <form method="POST" action="/password_gen">
+          <div>
+              <label for="service_name">Service Name</label>:
+              <input class="css_class" id="service_name" name="service_name" type="text" value="" />
+          </div>
+          <div>
+              <label for="master_key">Master Key</label>:
+              <input id="master_key" name="master_key" type="password" value="" />
+          </div>
+          <div>
+              <label for="submit_button">Submit Button</label>:
+              <input id="submit_button" name="submit_button" type="button" value="" />
+          </div>
+          <div>
+              <label for="new_password">New Password</label>:
+              <input id="new_password" name="new_password" type="password" value="" />
+          </div>
+      </form>
   </center>
   </div>
   <div class="w3-display-bottomleft w3-padding-large">

@@ -1,18 +1,22 @@
 from flask import Flask, render_template
+import wtforms
 import password_gen
 
 app = Flask(__name__)
 
+class PasswordForm(wtforms.Form):
+    service_name = wtforms.TextField('Service Name')
+    master_key = wtforms.TextField('Master Key')
+    submit_button = wtforms.SubmitField(label='Submit Test')
+    new_password = wtforms.TextField('New Password')
 
 @app.route("/")
-def hello():
-    return render_template('index.html')
+def password_form():
+    form = PasswordForm()
+    return render_template('index.html',form = form)
 
-@app.route('/generate_password',methods=['GET'])
-def handle_data():
-    #master_password = request.form['master_password']
-    #service_name = requeswt.form['service_name']
-    print(password_gen.generate_password('ABC','DEF'))
+
+
 
 if __name__ == "__main__":
     app.run()
