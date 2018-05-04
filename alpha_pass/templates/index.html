@@ -29,15 +29,16 @@ body, html {height: 100%}
     <center>
       <form method="POST" action="/">
           <div>
-              <label for="service_name">Service Name</label>:
-              <input class="css_class" id="service_name" name="service_name" type="text" value="" />
-          </div>
-          <div>
-              <label for="master_key">Master Key</label>:
-              <input id="master_key" name="master_key" type="password" value="" />
-          </div>
+              <input class="css_class" id="service_name" name="service_name" placeholder="Service Name:" type="text" value="" />
+            <div>
+              <input id="master_key" name="master_key" placeholder="Master Key:"type="password" value="" />
+            </div>
               <div class="input submit">
-                  <input type="submit" value="Generate" />
+                  <br>
+                  </br>
+                  <input type="submit" value="Generate Secure Password" />
+                  <br>
+                  </br>
               </div>
               {% with messages = get_flashed_messages() %}
    {% if messages %}
