@@ -2,7 +2,7 @@ import alpha_pass.password_gen as password_gen
 
 
 def test_PasswordGen():
-    expected_result = '749bd32ac64d1ceb'
+    expected_result = '749Bd32Ac64D1Ce%'
     master_key = '1234'
     service_name = 'Bank'
     test_password = password_gen.generate_password(master_key, service_name)
