@@ -2,8 +2,11 @@ from flask import Flask, render_template, request, flash, session
 import wtforms
 from wtforms import Form
 import password_gen
+import os
 
 app = Flask(__name__)
+secret_key = str(os.urandom(24))
+app.secret_key = secret_key
 
 class GeneratePasswordForm(wtforms.Form):
     service_name = wtforms.TextField('Service Name')
@@ -27,5 +30,5 @@ def password_form_enter_info():
 
 
 if __name__ == "__main__":
-    app.secret_key = 'super secret key'
+
     app.run()
