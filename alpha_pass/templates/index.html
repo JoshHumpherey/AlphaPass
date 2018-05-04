@@ -27,7 +27,7 @@ body, html {height: 100%}
     <hr class="w3-border-grey" style="margin:auto;width:40%">
     <p class="w3-large w3-center">The secure, open-source, and stateless password manager</p>
     <center>
-      <form method="POST" action="/password_gen">
+      <form method="POST" action="/">
           <div>
               <label for="service_name">Service Name</label>:
               <input class="css_class" id="service_name" name="service_name" type="text" value="" />
@@ -36,14 +36,16 @@ body, html {height: 100%}
               <label for="master_key">Master Key</label>:
               <input id="master_key" name="master_key" type="password" value="" />
           </div>
-          <div>
-              <label for="submit_button">Submit Button</label>:
-              <input id="submit_button" name="submit_button" type="button" value="" />
-          </div>
-          <div>
-              <label for="new_password">New Password</label>:
-              <input id="new_password" name="new_password" type="password" value="" />
-          </div>
+              <div class="input submit">
+                  <input type="submit" value="Generate" />
+              </div>
+              {% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
       </form>
   </center>
   </div>
